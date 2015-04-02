@@ -5,7 +5,7 @@ class JsonSchemaValidator
     public static function validate($data, $schemaFile = '')
     {
         if (\Config::get('json-schema-validator::config.run') === false) {
-            return;
+            return true;
         }
 
         if (! empty($schemaFile)) {
