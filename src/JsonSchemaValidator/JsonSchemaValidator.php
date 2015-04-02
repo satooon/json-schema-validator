@@ -16,12 +16,9 @@ class JsonSchemaValidator
             $validator = new \JsonSchema\Validator();
             $validator->check($data, $schema);
 
-            if (! $validator->isValid()) {
-                \App::abort(
-                    \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST,
-                    \Lang::get('json-schema-validator::error.validate')
-                );
-            }
+            return $validator->isValid();
         }
+
+        return true;
     }
 }
