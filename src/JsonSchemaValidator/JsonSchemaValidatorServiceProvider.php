@@ -19,8 +19,6 @@ class JsonSchemaValidatorServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('satooon/json-schema-validator');
-
-		\Lang::addNamespace('json-schema-validator', __DIR__.'/../lang');
 	}
 
 	/**
